@@ -1,0 +1,327 @@
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+<!--       <h1 class="display-3">Search Cheap Flights
+      </h1> -->
+      <ngb-tabset type="pills" [orientation]="currentOrientation" (tabChange)="beforeChange($event)">
+        <ngb-tab style="max-width:max-content;">
+          <ng-template ngbTabTitle>
+            <label><input type="radio" name="oneWay"  [checked]="tabCheckedOneWay" value="One Way"> &nbsp; One Way
+            </label></ng-template>
+
+            <ng-template ngbTabContent>
+              <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                  <div class="input-group">
+                  
+                    <ng-template #rt let-r="result" let-t="term">
+                      <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + r['flag']" class="mr-1" style="width: 16px">
+                      <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+                    </ng-template>
+                    <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + countriesTo.flag" class="mr-1" style="width:auto; align-self: auto;"  *ngIf="countriesTo !=undefined">
+      
+                    <input id="typeahead-template" type="text" class="form-control" [(ngModel)]="countriesTo" [ngbTypeahead]="search"  placeholder="From" [resultTemplate]="rt"
+                      [inputFormatter]="formatter" />
+                                  
+                    <ng-template #rt let-r="result" let-t="term">
+                      <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + r['flag']" class="mr-1" style="width: 16px">
+                      <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+                    </ng-template>
+  <div>
+    <img src="../../assets/images/two_way_arrows_with_border.png" style="
+    width: 26px;
+  " />
+  </div>
+  <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + countriesFrom.flag" class="mr-1"  style="width:auto; align-self: auto;" *ngIf="countriesFrom !=undefined">
+                                  
+  <input id="typeahead-template" type="text" class="form-control" [(ngModel)]="countriesFrom" [ngbTypeahead]="search" [resultTemplate]="rt"  placeholder="To" 
+                      [inputFormatter]="formatter" />
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="dpD.toggle()" type="button"></button>
+                      </div>    
+                    <input class="form-control" [(placeholder)]="fromDateDepart" name="dpDepart" [(ngModel)]="modelDepart" ngbDatepicker  #dpD="ngbDatepicker">
+                   
+  
+                    <ng-template #popContent><div class="search-options">
+                        <div class="div-select-list">
+                            <select id="select-list">
+                                    <option selected="selected" shortname="Ekonomi" value="0"> 
+                                        Economy
+                                      </option>
+                                    <option shortname="Business" value="2"> 
+                                        Business
+                                      </option>
+                                    <option shortname="Comfort" value="1"> 
+                                        Comfort
+                                      </option>
+                                    <option shortname="First Class" value="3"> 
+                                        First class
+                                      </option>
+                            </select>
+                            <input type="hidden" id="flight-class" name="flight_class" value="0">
+                        </div>
+                        <div class="div-search-spinner">
+                            <div class="title"> Adults   <span class="font-size-12"> (18 and up)  </span></div>
+                            <div class="spinner">
+                                <div class="search-spinner adult" passenger-type="adult">
+                                    <span>
+                                        <button type="button" data-dir="dwn"> -  </button>
+                                    </span>
+                                        <input id="adult-count" type="text" readonly="readonly" name="flight_adult_count" class="adult-count text-center noinput" value="1">
+                                    <span>
+                                        <button type="button" data-dir="up"> +  </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="div-search-spinner">
+                            <div class="title"> Student   <span class="font-size-12"> (12-24)  </span></div>
+                            <div class="spinner">
+                                <div class="search-spinner student" passenger-type="student">
+                                    <span>
+                                        <button type="button" data-dir="dwn"> -  </button>
+                                    </span>
+                                        <input id="student-count" type="text" readonly="readonly" name="flight_student_count" class="text-center noinput" value="0">
+                                                        <span>
+                                        <button type="button" data-dir="up"> +  </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="div-search-spinner">
+                            <div class="title"> Children   <span class="font-size-12"> (2-11)  </span></div>
+                            <div class="spinner">
+                                <div class="search-spinner child" passenger-type="child">
+                                    <span>
+                                        <button type="button" data-dir="dwn"> -  </button>
+                                    </span>
+                                        <input id="child-count" type="text" readonly="readonly" name="flight_children_count" class="text-center noinput" value="0">
+                                                        <span>
+                                        <button type="button" data-dir="up"> +  </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="div-search-spinner">
+                            <div class="title"> Baby   <span class="font-size-12"><br/> (under 2 years old)  </span></div>
+                            <div class="spinner">
+                                <div class="search-spinner infant" passenger-type="infant">
+                                    <span>
+                                        <button type="button" data-dir="dwn"> -  </button>
+                                    </span>
+                                        <input id="infant-count" type="text" readonly="readonly" name="flight_infant_count" class="text-center noinput" value="0">
+                                                        <span>
+                                        <button type="button" data-dir="up"> +  </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="div-search-spinner">
+                            <div class="title"> Elderly   <span class="font-size-12"> (65 and over)  </span></div>
+                            <div class="spinner">
+                                <div class="search-spinner senior" passenger-type="senior">
+                                    <span>
+                                        <button type="button" data-dir="dwn"> -  </button>
+                                    </span>
+                                        <input id="senior-count" type="text" readonly="readonly" name="flight_senior_count" class="text-center noinput" value="0">
+                                                        <span>
+                                        <button type="button" data-dir="up"> +  </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div></ng-template>
+                    <button type="button" class="btn btn-outline-secondary passangers-nos" [ngbPopover]="popContent" placement="bottom" [autoClose]="false" triggers="manual" #p="ngbPopover" (click)="p.open()" popoverTitle="Pop title">
+                      Passangers
+                    </button>
+                    <button type="button" class="btn btn-primary search-submit">
+                      Search
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab  >
+          <ng-template ngbTabTitle><label><input type="radio" name="twoWay" [checked]="tabCheckedTwoWay"  value="RoundTrip"> &nbsp; Round Trip
+         </label> </ng-template>
+         <ng-template ngbTabContent>
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item">
+                <div class="input-group">
+                
+                  <ng-template #rt let-r="result" let-t="term">
+                    <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + r['flag']" class="mr-1" style="width: 16px">
+                    <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+                  </ng-template>
+                  <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + countriesTo.flag" class="mr-1" style="width:auto; align-self: auto;"  *ngIf="countriesTo !=undefined">
+    
+                  <input id="typeahead-template" type="text" class="form-control" [(ngModel)]="countriesTo" [ngbTypeahead]="search"  placeholder="From" [resultTemplate]="rt"
+                    [inputFormatter]="formatter" />
+                                
+                  <ng-template #rt let-r="result" let-t="term">
+                    <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + r['flag']" class="mr-1" style="width: 16px">
+                    <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+                  </ng-template>
+<div>
+  <img src="../../assets/images/two_way_arrows_with_border.png" style="
+  width: 26px;
+" />
+</div>
+<img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + countriesFrom.flag" class="mr-1"  style="width:auto; align-self: auto;" *ngIf="countriesFrom !=undefined">
+                          
+<input id="typeahead-template" type="text" class="form-control" [(ngModel)]="countriesFrom" [ngbTypeahead]="search" [resultTemplate]="rt"  placeholder="To" 
+                    [inputFormatter]="formatter" />
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="showtwoWayCal = true; " type="button"></button>
+                    </div> 
+                    <input class="form-control"  [(ngModel)]="fromDate" placeholder="yyyy-mm-dd"
+                    name="dp"  placeholder="yyyy-mm-dd"
+                    name="dp" [displayMonths]="displayMonths" [navigation]="navigation" [outsideDays]="outsideDays"
+                    [showWeekNumbers]="showWeekNumbers" ngbDatepicker #d="ngbDatepicker"
+                    >
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="showtwoWayCal = true;" type="button"></button>
+                      <ngb-datepicker #dp (select)="onDateSelection($event)" *ngIf="showtwoWayCal == true" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+                      </ngb-datepicker>
+                 <!--             
+             -->
+  <ng-template #t let-date let-focused="focused">
+    <span class="custom-day"
+          [class.focused]="focused"
+          [class.range]="isRange(date)"
+          [class.faded]="isHovered(date) || isInside(date)"
+          (mouseenter)="hoveredDate = date"
+          (mouseleave)="hoveredDate = null"
+          >
+    
+          {{ date.day }}
+    </span>
+  </ng-template>
+                    </div>                           
+                  
+                                      <input class="form-control"  [(ngModel)]="toDate" placeholder="yyyy-mm-dd"
+                                      name="dp" [displayMonths]="displayMonths" [navigation]="navigation" [outsideDays]="outsideDays"
+                                      [showWeekNumbers]="showWeekNumbers" ngbDatepicker #d="ngbDatepicker"
+                                      >
+          
+
+                  <ng-template #popContent><div class="search-options">
+                      <div class="div-select-list">
+                          <select id="select-list">
+                                  <option selected="selected" shortname="Ekonomi" value="0"> 
+                                      Economy
+                                    </option>
+                                  <option shortname="Business" value="2"> 
+                                      Business
+                                    </option>
+                                  <option shortname="Comfort" value="1"> 
+                                      Comfort
+                                    </option>
+                                  <option shortname="First Class" value="3"> 
+                                      First class
+                                    </option>
+                          </select>
+                          <input type="hidden" id="flight-class" name="flight_class" value="0">
+                      </div>
+                      <div class="div-search-spinner">
+                          <div class="title"> Adults   <span class="font-size-12"> (18 and up)  </span></div>
+                          <div class="spinner">
+                              <div class="search-spinner adult" passenger-type="adult">
+                                  <span>
+                                      <button type="button" data-dir="dwn"> -  </button>
+                                  </span>
+                                      <input id="adult-count" type="text" readonly="readonly" name="flight_adult_count" class="adult-count text-center noinput" value="1">
+                                  <span>
+                                      <button type="button" data-dir="up"> +  </button>
+                                  </span>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                      </div>
+                      <div class="div-search-spinner">
+                          <div class="title"> Student   <span class="font-size-12"> (12-24)  </span></div>
+                          <div class="spinner">
+                              <div class="search-spinner student" passenger-type="student">
+                                  <span>
+                                      <button type="button" data-dir="dwn"> -  </button>
+                                  </span>
+                                      <input id="student-count" type="text" readonly="readonly" name="flight_student_count" class="text-center noinput" value="0">
+                                                      <span>
+                                      <button type="button" data-dir="up"> +  </button>
+                                  </span>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                      </div>
+                      <div class="div-search-spinner">
+                          <div class="title"> Children   <span class="font-size-12"> (2-11)  </span></div>
+                          <div class="spinner">
+                              <div class="search-spinner child" passenger-type="child">
+                                  <span>
+                                      <button type="button" data-dir="dwn"> -  </button>
+                                  </span>
+                                      <input id="child-count" type="text" readonly="readonly" name="flight_children_count" class="text-center noinput" value="0">
+                                                      <span>
+                                      <button type="button" data-dir="up"> +  </button>
+                                  </span>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                      </div>
+                      <div class="div-search-spinner">
+                          <div class="title"> Baby   <span class="font-size-12"><br/> (under 2 years old)  </span></div>
+                          <div class="spinner">
+                              <div class="search-spinner infant" passenger-type="infant">
+                                  <span>
+                                      <button type="button" data-dir="dwn"> -  </button>
+                                  </span>
+                                      <input id="infant-count" type="text" readonly="readonly" name="flight_infant_count" class="text-center noinput" value="0">
+                                                      <span>
+                                      <button type="button" data-dir="up"> +  </button>
+                                  </span>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                      </div>
+                      <div class="div-search-spinner">
+                          <div class="title"> Elderly   <span class="font-size-12"> (65 and over)  </span></div>
+                          <div class="spinner">
+                              <div class="search-spinner senior" passenger-type="senior">
+                                  <span>
+                                      <button type="button" data-dir="dwn"> -  </button>
+                                  </span>
+                                      <input id="senior-count" type="text" readonly="readonly" name="flight_senior_count" class="text-center noinput" value="0">
+                                                      <span>
+                                      <button type="button" data-dir="up"> +  </button>
+                                  </span>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                      </div>
+                  </div></ng-template>
+                  <button type="button" class="btn btn-outline-secondary passangers-nos" [ngbPopover]="popContent" placement="bottom" [autoClose]="false" triggers="manual" #p="ngbPopover" (click)="p.open()" popoverTitle="Pop title">
+                    Passangers
+                  </button>
+                  <button type="button" class="btn btn-primary search-submit">
+                    Search
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </ng-template> 
+        </ngb-tab>
+
+      </ngb-tabset>
+
+    </div>
+  </div>
+
+</main>

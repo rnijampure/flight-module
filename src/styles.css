@@ -1,0 +1,390 @@
+/* You can add global styles to this file, and also import other style files */
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #5d5d5d;
+}
+h1{
+    font-size: 24px;
+}
+.display-3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+.nav-pills .nav-link, .nav-pills .nav-item {
+    max-width: max-content!important;
+    color: #fff;
+    padding-bottom: 0;
+   }
+   .nav.nav-pills.flex-column{
+    flex-direction: row !important;
+
+    background: rgba(0, 0, 0, 0.50);
+   }
+   .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color:transparent!important;
+}
+.div-search-spinner{
+    padding: 10px;white-space: nowrap;
+    display: table-row;
+    
+}
+.noinput{
+max-width: 30px;
+}
+
+#select-list{
+    width:100%;
+}
+.div-search-spinner .title, .div-search-spinner  .spinner{
+white-space: nowrap; padding: 10px;display:table-cell;
+
+}
+
+.carousel-control-prev-icon{
+    background-image: url('assets/images/arrow-prev.png');
+ }
+ .carousel-control-next-icon{
+   background-image: url('assets/images/arrow-next.png');
+ }
+
+ .item {
+     transition: 500ms ease-in-out left;
+    }
+
+    .carousel-inner {
+        position: relative;
+        width: 83%;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .carousel-item{
+        margin: auto 2.5%;
+    }
+    app-root >div{
+        max-width: 100%;
+        overflow: auto;
+    }
+    .tab-pane.active .input-group{
+background: #e7e4df;    border-radius: 8px;
+    }
+    .tab-pane.active  .form-control,.btn.btn-outline-secondary.passangers-nos, .btn.btn-outline-secondary.passangers-nos:hover{
+       
+        background:transparent;
+        font-size: 12px;
+        border:0px;
+        height: 35px;
+        color: #737c88;
+
+    }
+
+    .btn.btn-outline-secondary.passangers-nos, .btn.btn-outline-secondary.passangers-nos:hover{
+        border: 0;
+        background: transparent;
+        color: #6c757d;
+        border-left: 1px solid #000;
+        border-radius: 0;
+        height: 38px;min-width: 175px;
+    
+    }
+    .search-submit{
+        height: 38px;font-size: 12px;
+    }
+    app-header  .container{
+        color: #fff;
+    }
+.btn.btn-outline-secondary.calendar{
+    border:0;
+background: url('../../flight-app/src/assets/images/calender.png');
+background-position: center;
+    background-repeat: no-repeat;
+    padding-left:15px;
+    }
+    .input-group-append {
+        padding-left: 15px;
+        border-left:1px solid #000;
+    }
+    .custom-day {
+        text-align: center;
+        padding: 0.185rem 0.25rem;
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+      }
+      .custom-day.focused {
+        background-color: #e6e6e6;
+      }
+      .custom-day.range, .custom-day:hover {
+        background-color: rgb(2, 117, 216);
+        color: white;
+      }
+      .custom-day.faded {
+        background-color: rgba(2, 117, 216, 0.5);
+      }
+      ngb-datepicker {
+        border: 1px solid #dfdfdf;
+        border-radius: .25rem;
+        display: inline-block;
+        position: absolute;
+        background: white;
+        color: black;
+        top: 38px;
+        left: 36%;
+    }
+    #special-offers-section .card{
+        min-width: 320px;
+    }
+    #special-offers-section .carousel-inner .status {
+        width: 98%;
+        margin: 12px 30px;
+        margin: 18px 0px;
+        display: block;
+        text-align: left;
+        position: relative;
+    }
+    #special-offers-section .carousel-inner .card.campaign .status .line {
+        width: 99%;
+        height: 26px;
+        border-bottom: 2px dashed #3b87f7;
+        font-size: 14px;
+    color: #8c8c8c;
+    }
+     #special-offers-section  .carousel-inner .card.campaign  .status .remain {
+        display: block;
+        left: 32px;
+        font-size: 14px;
+        color: #8c8c8c;
+    }
+     #special-offers-section  .carousel-inner .card.campaign  .status .price {
+        display: block;/* 
+        position: absolute;
+        right: 32px;
+        top: 7px; */
+        color: #878787;
+        letter-spacing: .0325em;
+        font-size: 16px;
+        font-weight: bold;
+        color: #3b87f7;
+        text-align: right;
+        margin-top: 4px;
+    }
+     #special-offers-section .card .status .arrow {
+       /*  display: block;
+        position: absolute; 
+        right: 0;
+        top: 8px;*/
+    }
+    .trn-sprt-logo-white {
+        display: inline-block;
+        background: url("../src/assets/images/blue-flight-icon.png") no-repeat left center;
+        height: 48px;
+        text-align: left;
+        width: 44px;
+        margin-left: -9px;
+    }
+    #special-offers-section  .carousel-inner .card.campaign  .status .arrow img {
+        border-radius: 50px;
+        width: 25px;
+        background-color: #3b87f7;
+    }
+    #special-offers-section  .carousel-inner .card.campaign .card-title img 
+    {
+        width: 150px;
+
+    max-height: 28px;
+    }
+    .minor-text{
+        font-size: 10px;
+        color: #9a9999;
+    }
+    #cheap-flights-section .card-cheap-flights .card{
+background: #f2f1f1;
+margin: 10px;
+border: 0;
+    }
+    #cheap-flights-section .card-cheap-flights h5.card-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #616161;
+        padding-bottom: 5px;
+
+        padding-top: 5px;
+        display: block;
+    }
+    #cheap-flights-section .card-cheap-flights h5.card-title::before{
+        content: "New";
+        padding: 5px;
+    padding-left: 5px;
+    background-color: #006EE9;
+    color: #ffffff;
+    margin-right: 5px;
+    }
+
+    #cheap-flights-section .card-cheap-flights .card-text{
+        font-size: 12px;
+    }
+    #cheap-flights-section .card-cheap-flights .card .card-body img
+    {
+        width: 95px;
+
+    }
+    #cheap-flights-section .col-sm-3{
+        padding: 0;
+    }
+    
+    #cheap-flights-section .card-cheap-flights .card:hover{
+    -webkit-box-shadow: 0 0 25px -12px rgba(0,0,0,.75);
+    -moz-box-shadow: 0 0 25px -12px rgba(0,0,0,.75);
+    box-shadow: 0 0 25px -12px rgba(0,0,0,.75);
+}
+#explorer-section,  #section-member,   #cheap-flights-section, #special-offers-section, #world-in-your-palm-section {
+    margin: 5% 0;
+}
+#explorer-section .default-header ,    
+#cheap-flights-section .default-header,
+#special-offers-section .default-header  {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 38px 0 36px;
+}
+#explorer-section .container {
+    flex-direction: row ;
+    flex-wrap: wrap;
+    justify-content: flex-start ;
+  }
+  #explorer-section .wrapper {
+    display: flex;  
+    flex-flow: row wrap;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+  }
+  
+  #explorer-section .wrapper > * {
+   
+    flex: 1 100%;
+    border-radius: 3px; 
+  }
+  
+  #explorer-section .header {
+    background: tomato;
+  }
+  
+  #explorer-section .footer {
+    background: lightgreen;
+  }
+  
+  #explorer-section .main {
+    text-align: left;
+    background: url('../src/assets/images/switzerland-3.jpg') no-repeat;
+    background-size:    cover; 
+  margin: 5px 13px;
+    margin-bottom: 0;
+  }
+  #explorer-section .lower-section .main {
+    text-align: left;
+    background: url('../src/assets/images/Amsterdam.jpg') no-repeat;
+    background-size:    cover; 
+  margin: 5px 13px;
+    margin-bottom: 0;
+  }
+  
+  #explorer-section .main:hover, 
+  #explorer-section .aside-2:hover,
+  #explorer-section  .aside-1:hover {
+      opacity: .6; cursor: pointer; 
+        background-size: 102%;
+}
+#explorer-section .aside-2:hover,  #explorer-section  .aside-1:hover {
+    opacity: .6; cursor: pointer; 
+      background-size: 153%;
+}
+  #explorer-section .aside-1 {
+    margin-bottom: 5px; 
+    background: url('../src/assets/images/geneva-lead.jpg') no-repeat;
+    background-size:    cover; 
+  }
+  
+  #explorer-section .aside-2 {
+    margin-top: 5px;   background: url('../src/assets/images/istanbul-city-tour.jpg') no-repeat;    background-size: cover;
+  }
+  #explorer-section .aside-2 {
+    margin-top: 5px;   background: url('../src/assets/images/istanbul-city-tour.jpg') no-repeat;    background-size: cover;
+  }
+ 
+  @media all and (min-width: 600px) {
+    #explorer-section .aside { flex: 1 0 0; align-content: flex-start ;  order: 2 ; }
+    #explorer-section .aside-left { flex: 1 0 0;align-content: flex-start ;  order: 1 ; }
+  }
+  
+  @media all and (min-width: 800px) {
+    #explorer-section   .main    { flex: 3 0px;min-height: 350px; }
+    #explorer-section  .aside-1 {       min-height: 48%;
+        margin-top:5px;  border-radius: 3px;    margin-bottom: 10px; } 
+    #explorer-section .main    {order: 1;  }
+    #explorer-section .big-image {
+        order: 2!important; 
+    }
+    #explorer-section .aside-right {
+        order: 3!important; 
+    }
+    #explorer-section  .aside-2 {      min-height: 48%;
+        border-radius: 3px; }
+    #explorer-section .aside-2 p {
+        flex-grow: 1;
+      }
+  }
+ 
+ 
+  
+  .continent-label{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+  }
+  .trn-content-signup {
+    width: 100%;
+    display: inline-block;
+    padding: 90px 1%;
+    text-align: center;
+    overflow: hidden;
+    background: url('./assets/images/default-signup.png') center center no-repeat;
+    background-color: #3d78e0;
+    margin-top: 30px;
+}
+
+.trn-content-signup h2{
+
+    font-family: Arial, Helvetica, sans-serif; color: #fff;font-size: 26px;    padding-bottom: 36px;
+}
+.trn-content-signup>.btn-signup:link, .trn-content-signup>.btn-signup:visited, .trn-content-signup>.btn-signup:active {
+    border-radius: 50px;
+    border: 1px solid #3d78e0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    padding: 20px 30px;
+    text-decoration: none;
+    color: #367ae9;
+    font-size: 14px;
+}
+.jumbotron  .nav-link label{
+    font-size: 14px;
+    }
+    @media (min-width: 576px){
+.jumbotron {
+    padding: 7rem 3rem;
+    padding-top: 7rem;
+}
+}
+main .jumbotron ul.nav-pills.flex-column{
+
+    border-top-left-radius: .25rem!important;
+    border-top-right-radius: .25rem!important;
+  }

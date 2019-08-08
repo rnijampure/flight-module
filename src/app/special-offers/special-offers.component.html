@@ -1,0 +1,44 @@
+<div id="special-offers-section">
+<h2>Special Offers for Flights</h2>
+<p>Fly to cities you want to explore for less</p>
+<carousel  class="carousel slide"  [itemsPerSlide]="itemsPerSlide"
+          [singleSlideOffset]="singleSlideOffset"
+          [noWrap]="noWrap"
+          [interval]="false"
+          [startFromIndex]="5"
+          (slideRangeChange)="onSlideRangeChange($event)" [showIndicators]="false">
+  <slide *ngFor="let slide of CheapFlights; let index=index">
+    <div class="card campaign">
+            <div class="card-body">
+              <h5 class="card-title"><img src="{{slide.image}}" title=""></h5>
+              <div class="status">
+
+                <div class="line">
+                 
+                    <div class="cmg_logo trn-sprt-logo-white">&nbsp;</div>
+                   <span> 8 Days Left</span>
+                </div>
+                
+                <div class="price">10% Discount
+                  <div class="arrow" style="display:inline;">
+                    <img width="25" height="25" alt=">" src="https://res.cloudinary.com/turna/image/upload/q_auto,f_auto/Images/General/Lazy/forward_arrow.jpg">
+                </div>
+                </div>
+                
+            </div>  <span class="minor-text">10% Discount on all airline tickets </span>
+            </div>
+          </div>
+       
+
+  </slide>
+</carousel>
+
+<div class="container" [ngStyle]="{'marginTop': '20px'}">
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" [(ngModel)]="noWrap">
+      Infinite
+    </label>
+  </div>
+</div>
+</div>
